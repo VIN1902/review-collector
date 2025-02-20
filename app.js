@@ -2,12 +2,16 @@ const submit = document.querySelector('button[type="submit"]');
 const userName = document.querySelector("#user-name");
 const userEmail = document.querySelector("#user-email");
 const userReview = document.querySelector("#user-review");
+const reviewCards = document.querySelector(".review-cards");
 
 submit.addEventListener("click", function (e) {
     e.preventDefault();
-    console.log(userName.value);
-    console.log(userEmail.value);
-    console.log(userReview.value);
+    const card = makeCard(
+        userName.value.trim(),
+        userEmail.value.trim(),
+        userReview.value.trim()
+    );
+    reviewCards.appendChild(card);
     resetDisplay();
 });
 
@@ -15,4 +19,26 @@ function resetDisplay() {
     userName.value = "";
     userEmail.value = "";
     userReview.value = "";
+}
+
+function makeCard(userName, userEmail, userReview) {
+    const article = document.createElement("article");
+    article.classList.add("card");
+    const h4 = makeCardHeading(userName, userEmail);
+    article.appendChild(h4);
+    const p = makeCardPara(userReview);
+    article.appendChild(p);
+    return article;
+}
+
+function makeCardHeading(userName, userEmail) {
+    const h4 = document.createElement("h4");
+    h4.textContent = `${userName} (${userEmail})`;
+    return h4;
+}
+
+function makeCardPara(userReview) {
+    const p = document.createElement("p");
+    p.textContent = `${userReview}`;
+    return p;
 }
