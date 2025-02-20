@@ -6,14 +6,33 @@ const reviewCards = document.querySelector(".review-cards");
 
 submit.addEventListener("click", function (e) {
     e.preventDefault();
-    const card = makeCard(
-        userName.value.trim(),
-        userEmail.value.trim(),
-        userReview.value.trim()
-    );
-    reviewCards.appendChild(card);
-    resetDisplay();
+    if (
+        !formValidation(
+            userName.value.trim(),
+            userEmail.value.trim(),
+            userReview.value.trim()
+        )
+    ) {
+        return;
+    } else {
+        const card = makeCard(
+            userName.value.trim(),
+            userEmail.value.trim(),
+            userReview.value.trim()
+        );
+        reviewCards.appendChild(card);
+        resetDisplay();
+    }
 });
+
+function formValidation(userName, userEmail, userReview) {
+    if (userName === "" || userEmail === "" || userReview === "") {
+        alert("Kindly enter your details before submitting");
+        return false;
+    } else {
+        return true;
+    }
+}
 
 function resetDisplay() {
     userName.value = "";
