@@ -6,47 +6,70 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Review Collector</title>
     <link rel="stylesheet" href="./style.css">
-    <script src="app.js"></script>
+    <script src="app.js" defer></script>
 </head>
 
 <body>
-    <div class="hero-title">
-        <h1>
-            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32" width="35" height="35"
-                style="display: inline-block; vertical-align: middle;">
-                <style>
-                    .blueprint_een {
-                        fill: #111918;
-                    }
-                </style>
-                <path class="blueprint_een"
-                    d="M30.707,9.293L26,4.586V1c0-0.552-0.448-1-1-1H3C2.448,0,2,0.448,2,1v30c0,0.552,0.448,1,1,1  h22c0.552,0,1-0.448,1-1V15.414l4.707-4.707C31.098,10.317,31.098,9.683,30.707,9.293z M11.921,17.628l4.452,4.452l-5.194,0.742  L11.921,17.628z M17.146,21.439l-4.586-4.586l8.293-8.293l4.586,4.586L17.146,21.439z M26.146,12.439l-4.586-4.586L24,5.414v0  L28.586,10L26.146,12.439z M4,30V2h20v2l-4,4H8v1h11l-2,2H8v1h8l-2,2H8v1h5l-1.764,1.764c-0.069,0.069-0.124,0.15-0.17,0.236H8v1  h2.857l-0.286,2H8v1h2.429l-0.286,2H8v1h2l6.67-0.953c0.214-0.031,0.413-0.13,0.566-0.283L24,16v14H4z" />
-            </svg>
-            Feedback Form
-        </h1>
-    </div>
-    <form class="input-container">
-        <legend>Write your review</legend>
-        <textarea placeholder="Your feedback" rows="20" cols="60" id="user-input"></textarea>
-        <button type="submit">Submit</button>
-    </form>
-    <div class="display-container">
-        <div class="card">
-            <h4>User 1</h4>
-            <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Minus nisi dolorem animi quas adipisci eaque
-                aliquam natus praesentium accusamus excepturi.</p>
-        </div>
-        <div class="card">
-            <h4>User 1</h4>
-            <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Minus nisi dolorem animi quas adipisci eaque
-                aliquam natus praesentium accusamus excepturi.</p>
-        </div>
-        <div class="card">
-            <h4>User 1</h4>
-            <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Minus nisi dolorem animi quas adipisci eaque
-                aliquam natus praesentium accusamus excepturi.</p>
-        </div>
-    </div>
+    <nav>
+        <ul>
+            <li> <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32" width="35" height="35"
+                    style="display: inline-block; vertical-align: middle;">
+                    <path class="blueprint_een"
+                        d="M30.707,9.293L26,4.586V1c0-0.552-0.448-1-1-1H3C2.448,0,2,0.448,2,1v30c0,0.552,0.448,1,1,1  h22c0.552,0,1-0.448,1-1V15.414l4.707-4.707C31.098,10.317,31.098,9.683,30.707,9.293z M11.921,17.628l4.452,4.452l-5.194,0.742  L11.921,17.628z M17.146,21.439l-4.586-4.586l8.293-8.293l4.586,4.586L17.146,21.439z M26.146,12.439l-4.586-4.586L24,5.414v0  L28.586,10L26.146,12.439z M4,30V2h20v2l-4,4H8v1h11l-2,2H8v1h8l-2,2H8v1h5l-1.764,1.764c-0.069,0.069-0.124,0.15-0.17,0.236H8v1  h2.857l-0.286,2H8v1h2.429l-0.286,2H8v1h2l6.67-0.953c0.214-0.031,0.413-0.13,0.566-0.283L24,16v14H4z" />
+                </svg>
+            </li>
+            <li>
+                <h1>Feedback form</h1>
+            </li>
+        </ul>
+    </nav>
+    <main>
+        <section class="input-container">
+            <h2>Enter your review</h2>
+            <form>
+                <fieldset>
+                    <legend>Your information</legend>
+                    <div>
+                        <label for="user-name">Name</label>
+                        <input type="text" id="user-name" required>
+                    </div>
+                    <div>
+                        <label for="user-email">Email</label>
+                        <input type="email" id="user-email" required>
+                    </div>
+                </fieldset>
+                <fieldset>
+                    <legend>Your review</legend>
+                    <div>
+                        <textarea placeholder="Enter your feedback" rows="15" cols="65" id="user-review"
+                            required></textarea>
+                    </div>
+                </fieldset>
+                <button type="submit">Submit</button>
+            </form>
+        </section>
+        <section class="display-container">
+            <h2>User Reviews</h2>
+            <article class="card">
+                <h4>Ram (ram@gmail.com)</h4>
+                <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Minus nisi dolorem animi quas adipisci
+                    eaque
+                    aliquam natus praesentium accusamus excepturi.</p>
+            </article>
+            <article class="card">
+                <h4>Sham (sham@gmail.com)</h4>
+                <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Minus nisi dolorem animi quas adipisci
+                    eaque
+                    aliquam natus praesentium accusamus excepturi.</p>
+            </article>
+            <article class="card">
+                <h4>Ghansham (ghnasham@gmail.com)</h4>
+                <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Minus nisi dolorem animi quas adipisci
+                    eaque
+                    aliquam natus praesentium accusamus excepturi.</p>
+            </article>
+        </section>
+    </main>
 </body>
 
 </html>

@@ -1,50 +1,92 @@
 * {
-    margin: 0;
     padding: 0;
+    margin: 0;
     box-sizing: border-box;
 }
 
 body {
-    background-image: linear-gradient(62deg, #8ec5fc 0%, #e0c3fc 75%);
+    display: flex;
+    flex-direction: column;
     height: 100vh;
-    display: grid;
-    grid-template-columns: repeat(2, 1fr);
-    justify-items: center;
-    align-items: center;
 }
 
-.hero-title {
-    grid-area: 1/1/1/-1;
-    z-index: 1;
-    align-self: start;
-    margin-top: 20px;
+nav {
+    grid-area: 1/1/2/-1;
+    background-color: #1171ba;
+    color: #ffffff;
+    padding: 10px;
+}
+
+.blueprint_een {
+    fill: #ffffff;
+}
+
+nav ul {
+    list-style-type: none;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    gap: 5px;
+}
+
+main {
+    flex: 1;
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
 }
 
 .input-container {
-    grid-row: 1/-1;
-    grid-column: 1/2;
     display: flex;
     flex-direction: column;
-    gap: 10px;
-    justify-content: start;
-    align-items: center;
+    justify-content: center;
+    gap: 20px;
 }
 
 .display-container {
-    grid-row: 1/-1;
-    grid-column: 2/3;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: 20px;
+}
+
+form {
     display: flex;
     flex-direction: column;
     gap: 15px;
+    align-items: flex-start;
+}
 
+form>fieldset {
+    padding: 10px;
+    border: none;
+}
+
+fieldset:nth-child(1) {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+textarea {
+    padding: 20px;
+    border-radius: 20px;
 }
 
 .card {
-    background-color: #eee;
     display: flex;
     flex-direction: column;
-    padding: 40px;
-    border-radius: 20px;
+    background-color: #eeeeee;
+    padding: 20px;
+    border-radius: 10px;
+    gap: 10px;
     max-width: 500px;
-    gap: 5px;
+}
+
+button[type="submit"] {
+    padding: 8px 16px;
+    border: none;
+    border-radius: 10px;
+    background-color: #24aae2;
+    color: #ffffff;
 }
