@@ -55,6 +55,7 @@ function resetDisplay() {
     userName.value = "";
     userEmail.value = "";
     userReview.value = "";
+    ratingValue = null;
 }
 
 function makeCard(userName, userEmail, userReview, ratingValue) {
